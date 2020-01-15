@@ -1,6 +1,5 @@
 const { Router } = require('express');
-const axios = require('axios');
-const Dev = require('./models/Dev');
+const DevController = require('./controllers/DevController');
 
 const routes = Router();
 
@@ -8,30 +7,6 @@ routes.get('/', (request, response) => {
   return response.json({ message: 'Hello' });
 });
 
-routes.post('/devs', async (request, response) => {
-  const { github_username, techs, latitude, longitude } = request.body;
-
-  const apiResponse = await axios.get(`https://api.github.com/users/${github_username}`);
-
-  const { name = login, avatar_url, bio } = apiResponse.data;
-
-  const techsArray = techs.split(',').map(tech => tech.trim());
-
-  const location = {
-    type: 'Point',
-    coordinates: [longitude, latitude],
-  }
-
-  const dev = await Dev.create({
-    github_username,
-    name,
-    avatar_url,
-    bio,
-    techs: techsArray,
-    location,
-  });
-
-  return response.json(dev);
-});
+routes.post('/devs', DevController.store);
 
 module.exports = routes;
