@@ -2,7 +2,7 @@
 
 <p align = "center">
 <a href="https://www.codefactor.io/repository/github/hikarocordeiro/devradar-backend"><img src="https://www.codefactor.io/repository/github/hikarocordeiro/devradar-backend/badge" alt="CodeFactor" /></a>
-<img alt = "Última confirmação do Github" src = "https://img.shields.io/github/last-commit/glayner/gympoint">
+<img alt = "Última confirmação do Github" src = "https://img.shields.io/github/last-commit/hikarocordeiro/devRadar-backend">
 <img alt = "Idioma principal do GitHub" src = "https://img.shields.io/github/languages/top/hikarocordeiro/devRadar-backend">
 </p>
 
